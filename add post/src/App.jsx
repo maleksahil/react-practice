@@ -1,57 +1,68 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [name, Setname] = useState("");
-  const [price, Setprice] = useState("");
-  const [array, Setarray] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [array, setArray] = useState([]);
 
   const show = (e) => {
     e.preventDefault();
-    alert("Form submitted");
-    Setarray([...array, { name, price }]);
-    Setname("");
-    Setprice("");
+    setArray([...array, { name, price, image }]);
+    setName("");
+    setPrice("");
+    setImage("");
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-5">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-50 to-gray-200 p-6">
       {/* Form */}
       <form
         onSubmit={show}
-        className="flex flex-col items-center bg-white w-[300px] p-5 rounded-lg shadow-lg space-y-4"
+        className="flex flex-col items-center bg-white w-[350px] p-6 rounded-xl shadow-xl space-y-5 border border-gray-200"
       >
-        <h2 className="text-xl font-semibold text-gray-700">Add Product</h2>
+        <h2 className="text-2xl font-semibold text-gray-700">Add Product</h2>
         <input
           type="text"
-          className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
           placeholder="Enter name"
           value={name}
-          onChange={(e) => Setname(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <input
           type="number"
-          className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
           placeholder="Enter price"
           value={price}
-          onChange={(e) => Setprice(e.target.value)}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <input
+          type="text"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+          placeholder="Enter image URL"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 active:bg-blue-700 transition"
+          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 active:bg-blue-700 transition font-semibold"
         >
           Submit
         </button>
       </form>
 
       {/* Display List */}
-      <div className="mt-10 w-[300px] space-y-3">
+      <div className="mt-10 w-[100%] space-x-4 space-y-4 justify-center h-auto flex flex-wrap ">
         {array.map((val, index) => (
           <div
             key={index}
-            className="bg-white p-3 rounded-lg shadow-md flex justify-between items-center"
+            className="bg-white w-[30%] p-4 rounded-xl shadow-md flex flex-col items-center space-x-4 border border-gray-200"
           >
-            <p className="text-gray-800 font-medium">{val.name}</p>
-            <p className="text-gray-600">${val.price}</p>
+            <img src={val.image} alt="product" className="w-[100%] h-auto object-cover rounded-lg" />
+            <div className="flex flex-col">
+              <p className="text-gray-800 font-semibold text-3xl">{val.name}</p>
+              <p className="text-gray-600 font-medium text-3xl">${val.price}</p>
+            </div>
           </div>
         ))}
       </div>
