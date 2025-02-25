@@ -1,0 +1,41 @@
+/* App.css */
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  flex: 1;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.product-list {
+  display: grid;
+  gap: 20px;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
