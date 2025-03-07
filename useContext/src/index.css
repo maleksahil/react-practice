@@ -1,0 +1,121 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ✅ Main Layout: Form is Fixed, Cards Wrap on the Right */
+.main-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  /* max-width: 1200px; */
+  align-items: flex-start;
+}
+
+/* ✅ Form Section (Fixed on the Left) */
+.form-container {
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+/* Input Fields */
+input {
+  width: 94%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  
+  background-color: #6fa7e4;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ Data Display Section */
+.data-container {
+  flex-grow: 1;
+}
+
+/* Cards Container (Wraps when full) */
+.todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Individual Card */
+.todo-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: left;
+
+  position: relative;
+}
+
+/* Card Text */
+.todo-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Edit and Delete Buttons */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.edit-btn {
+  background-color: #28a745;
+  margin: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  margin: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
